@@ -14,8 +14,9 @@
 .invitation-card, .intro-card {
     background-color: #ff6f77;
     color: white;
-    width: 90%;
+    width: 80%;
     max-width: 400px;
+    height: 40%;
     padding: 40px 20px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
