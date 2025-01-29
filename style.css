@@ -1,0 +1,84 @@
+ /* General Styling */
+ body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffe4e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Invitation Card */
+.invitation-card, .intro-card {
+    background-color: #ff6f77;
+    color: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Buttons */
+.button-container , .intro-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    height: 150px;
+}
+
+button , .clickme{
+    font-size: 16px;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.clickme{
+    background-color: #d12234;
+    color: white;
+    font-weight: 600;
+}
+.intro-container a{
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.yes-button {
+    background-color: #28a745;
+    color: white;
+    font-weight: 600;
+}
+
+.yes-button:hover {
+    background-color: #218838;
+}
+
+.no-button {
+    background-color: #dc3545;
+    color: white;
+    font-weight: 600;
+    position: relative;
+}
+
+.no-button:hover {
+    background-color: #c82333;
+}
+
+/* For Newly Spawned Yes Buttons */
+.spawned-yes {
+    position: absolute;
+    font-size: 14px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+}

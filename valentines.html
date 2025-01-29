@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Be My Valentine?</title>
+    
+</head>
+<body>
+
+    <div class="invitation-card">
+        <h2>Will you be my Valentine? 💖</h2>
+        <p>Try clicking 'No'!!!</p>
+        <div class="button-container">
+            <button class="yes-button" onclick="nextPage()">Yes</button>
+            <button class="no-button" onclick="spawnYesButtons()">No</button>
+        </div>
+    </div>  
+
+    <script>
+        function nextPage() {
+            //alert("Yay! ❤️ Can't wait!");
+            window.location.href = "last.html"; // Change this to your actual next page URL
+        }
+
+        function spawnYesButtons() {
+            let container = document.querySelector(".button-container");
+
+            let newYesButton = document.createElement("button");
+            newYesButton.innerText = "Yes";
+            newYesButton.classList.add("yes-button", "spawned-yes");
+            newYesButton.onclick = nextPage;
+
+            // Generate random positions within the container
+            let x = Math.random() * (container.clientWidth - 80);
+            let y = Math.random() * (container.clientHeight - 40);
+            
+            newYesButton.style.left = `${x}px`;
+            newYesButton.style.top = `${y}px`;
+
+            container.appendChild(newYesButton);
+        }
+    </script>
+
+</body>
+</html>
