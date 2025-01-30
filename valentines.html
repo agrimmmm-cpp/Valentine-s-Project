@@ -6,7 +6,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Be My Valentine?</title>
-    
 </head>
 <body>
 
@@ -20,9 +19,19 @@
     </div>  
 
     <script>
+        // Function to get URL query parameters
+        function getQueryParam(param) {
+            let urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Set loved one's name dynamically on page load
+        let lovedOneName = getQueryParam("name") || "My Love";
+        document.getElementById("valentineName").innerText = 
+            `Hi ${lovedOneName}! 💖 Will you be my Valentine?`;
+
         function nextPage() {
-            //alert("Yay! ❤️ Can't wait!");
-            window.location.href = "last.html"; // Change this to your actual next page URL
+            window.location.href = `last.html?name=${encodeURIComponent(lovedOneName)}`;
         }
 
         function spawnYesButtons() {
@@ -41,19 +50,6 @@
             newYesButton.style.top = `${y}px`;
 
             container.appendChild(newYesButton);
-            function getQueryParam(param) {
-                let urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param);
-            }
-            
-            // Set loved one's name dynamically
-            let lovedOneName = getQueryParam("name") || "My Love";
-            document.getElementById("valentineName").innerText = 
-                `Hi ${lovedOneName}! 💖 Will you be my Valentine?`;
-            
-            function nextPage() {
-                window.location.href = `last.html?name=${encodeURIComponent(lovedOneName)}`;
-            }
         }
     </script>
 
