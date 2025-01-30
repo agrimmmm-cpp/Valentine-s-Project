@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Intro</title>
+    <title>Customize Your Valentine</title>
 </head>
 <body>
     <div class="intro-card">
-        <h2>Hi Ayushi! 💖</h2>
-        <p>I just wanted to tell how much I love you and will always love you!! Click the button</p>
-        <div class="intro-container">
-            <a href="valentines.html" class="clickme">I have a<br>Question for you</a>
-        </div>
-    </div>  
+        <h2>Enter Your Loved One's Name</h2>
+        <input type="text" id="lovedOneName" placeholder="Type their name here...">
+        <button onclick="generateLink()">Generate Link</button>
+        <p id="generatedLink"></p>
+    </div>
+
+    <script>
+        function generateLink() {
+            let name = document.getElementById("lovedOneName").value.trim();
+            if (name === "") {
+                alert("Please enter a name");
+                return;
+            }
+            let encodedName = encodeURIComponent(name);
+            let link = `https://agrimmmm-cpp.github.io/Valentine-s-site/valentine.html?name=${encodedName}`;
+        
+            document.getElementById("generatedLink").innerHTML = 
+                `Share this link: <a href="${link}" target="_blank">${link}</a>`;
+        }
+    </script>
 </body>
 </html>
